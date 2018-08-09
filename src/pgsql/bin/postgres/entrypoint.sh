@@ -54,4 +54,8 @@ else
     /usr/local/bin/cluster/postgres/standby/entrypoint.sh
 fi
 
+if [ -f "/docker-entrypoint-initdb.d/entrypoint.sh" ]; then
+    chmod 755 /docker-entrypoint-initdb.d/entrypoint.sh
+fi
+
 /usr/local/bin/cluster/repmgr/start.sh
